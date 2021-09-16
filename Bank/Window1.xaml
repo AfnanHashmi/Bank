@@ -1,0 +1,64 @@
+﻿<Window x:Class="Bank.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bank"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="Window1" Height="450" Width="800">
+    <Border Padding="10" Margin="0,0,0,-33">
+        <StackPanel Margin="0,0,0,-10">
+            <!--Title-->
+            <TextBlock Text="Welcome to your Dashboard" HorizontalAlignment="Center" FontSize="30" Background="Aquamarine" Height="36" />
+            <TextBlock Text="Personal details" FontSize="20"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Name-->
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="Name" FontSize="15" Margin="0 10 0 0" />
+                    <TextBox x:Name="Name" Margin="0 0 10 0" Height="20" IsReadOnly="True"/>
+                    <!--DOB-->
+                    <TextBlock Text="DOB" FontSize="15" Margin="0 10 0 0" />
+                    <DatePickerTextBox x:Name="DOB" Margin="0 0 10 0" IsReadOnly="True"/>
+                </StackPanel>
+                <!--phone number-->
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="Phone Number" FontSize="15" Margin="0 10 0 0"/>
+                    <Grid>
+                        <TextBox x:Name="phnumber" Margin="0 0 10 0" IsReadOnly="True"/>
+                    </Grid>
+                    <!--gender-->
+                    <TextBlock Text="Gender" FontSize="15" Margin="0 10 0 0"/>
+                    <TextBox x:Name="gender" Margin="0 0 10 0" IsReadOnly="True"/>
+                </StackPanel>
+            </Grid>
+            <!--Address-->
+            <TextBlock Text="Address" Margin="0 10 0 0 " FontSize="15"/>
+            <TextBox x:Name="address" Margin="0 0 10 0" IsReadOnly="True"/>
+
+
+            <Line  
+            X1="0" Y1="10"  
+            X2="784" Y2="10" 
+            Stroke="Red"  
+            StrokeThickness="4" />
+            <TextBlock Text="Account Details" FontSize="20"/>
+            <Grid>
+                <!--account number-->
+                <TextBlock Text="Account Number" Margin="0 10 0 0" FontSize="15"/>
+                <TextBox x:Name="acctnum" Margin="0,30,500,70" IsReadOnly="True" Background="LightGray" Height="20"/>
+                <!--balance-->
+                <TextBlock Text="Balance" Margin="400 10 0 0" FontSize="15"/>
+                <TextBox x:Name="balance" Margin="400,30,90,70" IsReadOnly="True" Background="LightGray" Height="20" x:FieldModifier="public"/>
+                <!--withdraw-->
+                <Button Content="Withdraw" x:Name="withdraw" Click="withdraw_Click" Margin="92,100,600,15"/>
+                <!--deposit-->
+                <Button Content="Deposit" x:Name="deposit" Click="deposit_Click" Margin="519,100,166,15" RenderTransformOrigin="-0.48,0.594"/>
+            </Grid>
+        </StackPanel>
+    </Border>
+</Window>
